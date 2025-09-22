@@ -80,7 +80,21 @@ src/TrabalhosGA/Atividade01
 ```
 
 - [a. Apenas com o polígono preenchido](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/PoligonoPreenchido.cpp)  
-- [b. Apenas com contorno](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/blob/main/src/Exercicios/TarefasGrauA/Lista1/ApenasComContorno.cpp)  
-- [c. Apenas como pontos](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/blob/main/src/Exercicios/TarefasGrauA/Lista1/ApenasComPontos.cpp)  
-- [d. Com as 3 formas de desenho juntas](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/blob/main/src/Exercicios/TarefasGrauA/Lista1/TresFormasJuntas.cpp)  
+- [b. Apenas com contorno](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/ApenasComContorno.cpp)  
+- [c. Apenas como pontos](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/ApenasComPontos.cpp)  
+- [d. Com as 3 formas de desenho juntas](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/TresFormas.cpp)  
 
+---
+
+## 6. Faça o desenho de um círculo na tela, utilizando a equação paramétrica do círculo para gerar os vértices. Depois disso:
+Os desenhos abaixo se encontram na pasta:
+
+```
+src/TrabalhosGA/Atividade01
+```
+
+- [a. Desenhe um octágono](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/Octagono.cpp)  
+- [b. Desenhe um pentágono](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/Pentagono.cpp)  
+- [c. Desenhe um pac-man](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/PacMan.cpp)  
+- [d. Desenhe uma fatia de pizza](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/FatiaPizza.cpp)  
+- [e. DESAFIO: desenhe uma “estrela”](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/Estrela.cpp)  
