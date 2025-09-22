@@ -16,7 +16,7 @@ Este repositório contém exemplos e códigos utilizados na disciplina de **Proc
 ├── 📂 common/                 # Código reutilizável entre os projetos
 │   ├── glad.c                 # Implementação da GLAD
 ├── 📂 src/                    # Código-fonte dos exemplos e atividades
-│   ├── 📂 Atividades/         # Diretórios com atividades específicas
+│   ├── 📂 TrabalhosGA/        # Diretórios com atividades específicas
 ├── 📄 MakeFile                # Configuração para compilação (Mac/Linux)
 ├── 📄 README.md               # Este arquivo
 ├── 📄 ComoCompilar.md         # Tutorial de compilação (Mac)
@@ -93,13 +93,14 @@ Organize cada atividade em subdiretórios dentro de `src`:
 
 ```plaintext
 src/
-├── Atividade01/
-│   ├── Ex1.cpp
-│   ├── Ex2.cpp
-│   └── ListaAtividade01.md
-├── Atividade02/
-│   ├── Ex1.cpp
-│   └── ListaAtividade02.md
+├── TrabalhosGA/
+│  ├── Atividade01/
+│  │   ├── Ex1.cpp
+│  │   ├── Ex2.cpp
+│  │   └── ListaAtividade01.md
+│  ├── Atividade02/
+│  │   ├── Ex1.cpp
+│  │   └── ListaAtividade02.md
 ...
 ```
 
