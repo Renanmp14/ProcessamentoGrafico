@@ -98,3 +98,146 @@ src/TrabalhosGA/Atividade01
 - [c. Desenhe um pac-man](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/PacMan.cpp)  
 - [d. Desenhe uma fatia de pizza](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/FatiaPizza.cpp)  
 - [e. DESAFIO: desenhe uma “estrela”](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/Estrela.cpp)  
+
+---
+
+## 7. Desenhe uma espiral, assim:
+
+![IMG](image.png)
+
+```
+src/TrabalhosGA/Atividade01/Espiral.cpp
+```
+
+- [Espiral](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/Espiral.cpp)  
+
+---
+
+## Questão 8
+
+**a. Descreva uma possível configuração dos buffers (VBO, VAO e EBO) para representá-lo.**
+
+Para representar o triângulo com vértices coloridos, podemos usar:
+
+- **VBO (Vertex Buffer Object):** Armazena os dados dos vértices, incluindo posição e cor.
+- **VAO (Vertex Array Object):** Armazena a configuração dos atributos dos vértices (como posição e cor).
+- **EBO (Element Buffer Object):** Armazena os índices dos vértices para desenhar o triângulo.
+
+**Exemplo de configuração:**
+
+- **Vértices:**  
+  Cada vértice terá posição (x, y) e cor (r, g, b):
+
+  | Vértice | Posição (x, y) | Cor (r, g, b) |
+  |---------|----------------|---------------|
+  | P1      | (0, 0.5)       | (1, 0, 0)     |
+  | P2      | (-0.5, -0.5)   | (0, 1, 0)     |
+  | P3      | (0.5, -0.5)    | (0, 0, 1)     |
+
+  **Array de vértices (intercalado):**
+  ```cpp
+  float vertices[] = {
+      //  x     y      r    g    b
+       0.0f,  0.5f,  1.0f, 0.0f, 0.0f, // P1 - vermelho
+      -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, // P2 - verde
+       0.5f, -0.5f,  0.0f, 0.0f, 1.0f  // P3 - azul
+  };
+  ```
+
+- **Índices (EBO):**
+  ```cpp
+  unsigned int indices[] = {
+      0, 1, 2 // P1, P2, P3
+  };
+  ```
+
+- **Configuração dos buffers:**
+  1. Gerar e bindar o VAO.
+  2. Gerar e bindar o VBO, enviar os dados dos vértices.
+  3. Gerar e bindar o EBO, enviar os índices.
+  4. Configurar os atributos:
+      - Posição: 2 floats, location 0.
+      - Cor: 3 floats, location 1.
+
+---
+
+**b. Como estes atributos seriam identificados no vertex shader?**
+
+No vertex shader, os atributos são identificados por meio de `layout(location = X)`:
+
+```glsl
+#version 400
+layout (location = 0) in vec2 position;
+layout (location = 1) in vec3 color;
+
+out vec3 vertexColor;
+
+void main() {
+    gl_Position = vec4(position, 0.0, 1.0);
+    vertexColor = color;
+}
+```
+
+- `position` recebe as coordenadas do vértice.
+- `color` recebe a cor do vértice.
+- `vertexColor` é passado para o fragment shader.
+
+---
+
+## Implementação Exemplo
+
+```cpp
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
+// ... inicialização do GLFW/GLAD ...
+
+float vertices[] = {
+    //  x     y      r    g    b
+     0.0f,  0.5f,  1.0f, 0.0f, 0.0f, // P1
+    -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, // P2
+     0.5f, -0.5f,  0.0f, 0.0f, 1.0f  // P3
+};
+
+unsigned int indices[] = { 0, 1, 2 };
+
+unsigned int VAO, VBO, EBO;
+glGenVertexArrays(1, &VAO);
+glGenBuffers(1, &VBO);
+glGenBuffers(1, &EBO);
+
+glBindVertexArray(VAO);
+
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+// posição
+glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+// cor
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(2 * sizeof(float)));
+glEnableVertexAttribArray(1);
+
+glBindVertexArray(0);
+
+// ... shaders e loop de renderização ...
+```
+
+No loop de renderização, use:
+```cpp
+glBindVertexArray(VAO);
+glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+```
+
+----
+
+## 9. Faça um desenho em um papel quadriculado (pode ser no computador mesmo) e reproduza-o utilizando primitivas em OpenGL. Neste exercício você poderá criar mais de um VAO e fazer mais de uma chamada de desenho para poder utilizar primitivas diferentes, se necessário.
+
+```
+src/TrabalhosGA/Atividade01/DesenhoCuston.cpp
+```
+
+- [DesenhoCuston](https://github.com/Renanmp14/ProcessamentoGrafico/blob/main/src/TrabalhosGA/Atividade01/DesenhoCuston.cpp)  
