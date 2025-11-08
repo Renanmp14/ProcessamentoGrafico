@@ -94,7 +94,10 @@ SRC = \
     src/TrabalhosGA/Atividade02/Ex03.cpp \
     src/TrabalhosGA/Atividade02/ViewportComQuadrante.cpp \
     src/TrabalhosGA/Atividade02/ViewportCom4Quadrante.cpp \
-    src/TrabalhosGA/Atividade02/TrianguloComClique.cpp
+    src/TrabalhosGA/Atividade02/TrianguloComClique.cpp \
+    src/TrabalhosGB/Parte1/Exec1.cpp \
+    src/TrabalhosGB/Parte1/Exec2.cpp \
+    src/TrabalhosGB/Parte2/Exec3.cpp
 
 # Extrai só o nome do executável de cada arquivo
 TARGETS := $(notdir $(SRC))
